@@ -8,6 +8,28 @@
     
 </head>
 <body>
+    <h1>Check if username exists</h1>
+    <p>Enter a username to check</p>
+    <input type="text" id="username", placeholder="Enter username">
+    <button onclick="checkusername()">Check</button>
+
+    <p id="result"></p>
+
+    <script>
+        const usernames=['Ritul','Choyon','Zarif','Rosy','Zinia']
+        function checkusername(){
+            const username=document.getElementById("username").value;
+            const index=usernames.indexOf(username.toLowerCase());
+            const resultElement=document.getElementById("result");
+
+            if (index !== -1){
+                resultElement.textContent=`Username "${username}" is already taken`;
+            }
+            else{
+                resultElement.textContent=`Username "${username}" is available`;
+            }
+        }
+    </script>
     <script src="array_script.js"></script>
 </body>
 </html>
